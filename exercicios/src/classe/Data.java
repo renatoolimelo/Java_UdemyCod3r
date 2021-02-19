@@ -11,10 +11,17 @@ public class Data {
 		this.mes = mes;
 		this.ano = ano;
 	}
-
+	
+	public Data() {
+		this.dia = 1;
+		this.mes = 1;
+		this.ano = 1970;
+	}
+	
+	
 	@Override
 	public String toString() {
-		return dia + "/" + mes + "/" + ano;
+		return String.format("%d/%d/%d", dia, mes, ano);
 	}
 
 }

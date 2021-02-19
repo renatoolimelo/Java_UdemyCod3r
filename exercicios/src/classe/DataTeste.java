@@ -16,7 +16,7 @@ public class DataTeste {
 		boolean mesValido = false;
 		boolean diaValido = false;
 
-		anoDigitado = JOptionPane.showInputDialog("Informe o ano:").trim();
+		anoDigitado = JOptionPane.showInputDialog("Informe o ano:");
 		ano = DataValida.validaData(anoDigitado, "Ano");
 
 		if (ano != -1) {

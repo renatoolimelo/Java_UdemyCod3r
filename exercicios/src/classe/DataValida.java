@@ -9,7 +9,7 @@ public abstract class DataValida {
 		int ano;
 
 		try {
-			ano = Integer.parseInt(anoDigitado);
+			ano = Integer.parseInt(anoDigitado.trim());
 		} catch (Exception ex) {
 			JOptionPane.showMessageDialog(null, periodo + " inválido: " + anoDigitado);
 			return -1;
