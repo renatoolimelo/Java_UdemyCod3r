@@ -1,4 +1,4 @@
-package exercicios;
+package com.caelum.fj11.contas;
 
 public class TestaConta {
 
@@ -12,6 +12,7 @@ public class TestaConta {
 
 		Conta conta1 = new Conta(1, 1001, 0, cliente1);
 		Conta conta2 = new Conta(1, 2001, 0, cliente2);
+		Conta conta3 = new Conta(1, 2001, 0, cliente2);
 
 		conta1.deposita(100);
 		saqueSucesso = conta1.saca(150);
@@ -43,6 +44,12 @@ public class TestaConta {
 
 		System.out.println(conta1);
 		System.out.println(conta2);
+		
+		System.out.println(conta1.getIdentificador());
+		System.out.println(conta2.getIdentificador());
+		System.out.println(conta3.getIdentificador());
+		
+		
 
 	}
 

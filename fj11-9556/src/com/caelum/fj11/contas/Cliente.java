@@ -1,4 +1,4 @@
-package exercicios;
+package com.caelum.fj11.contas;
 
 public class Cliente {
 
