@@ -1,4 +1,4 @@
-package com.caelum.fj11.contas;
+package br.com.caelum.contas;
 
 public class Data {
 

@@ -1,4 +1,6 @@
-package com.caelum.fj11.contas;
+package br.com.caelum.contas;
+
+import br.com.caelum.contas.modelo.Conta;
 
 public class TestaConta {
 
@@ -10,9 +12,9 @@ public class TestaConta {
 		Cliente cliente1 = new Cliente("Zé", "123", "Rua Alpha, 2");
 		Cliente cliente2 = new Cliente("João", "23B", "Rua Omega, 99");
 
-		Conta conta1 = new Conta(1, 1001, 0, cliente1);
-		Conta conta2 = new Conta(1, 2001, 0, cliente2);
-		Conta conta3 = new Conta(1, 2001, 0, cliente2);
+		Conta conta1 = new Conta("1", 1001, 0, "Jose");
+		Conta conta2 = new Conta("1", 1001, 0, "Jose");
+		Conta conta3 = new Conta("1", 1001, 0, "Jose");
 
 		conta1.deposita(100);
 		saqueSucesso = conta1.saca(150);
