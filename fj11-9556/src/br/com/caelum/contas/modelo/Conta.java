@@ -1,6 +1,6 @@
 package br.com.caelum.contas.modelo;
 
-public class Conta {
+public abstract class Conta {
 
 	private String agencia;
 	private int numero;
@@ -24,32 +24,39 @@ public class Conta {
 
 	@Override
 	public String toString() {
-		return "A conta : " + numero + " que pertence ao cliente: " + titular + " tem saldo = R$"
-				+ mostraSaldo();
+		return "A conta : " + numero + " que pertence ao cliente: " + titular + " tem saldo = R$" + mostraSaldo();
 	}
 
 	public void deposita(double valorDeposito) {
 		this.saldo += valorDeposito;
 	}
 
-	public boolean saca(double valorDoSaque) {
-		if (this.saldo >= valorDoSaque) {
-			this.saldo -= valorDoSaque;
-			return true;
-		}
-		return false;
+	public void saca(double valorDoSaque) {
+		this.saldo -= valorDoSaque;
 	}
 
-	public boolean trasnferePara(Conta contaDestino, double valorTransferencia) {
-		if (this.saca(valorTransferencia)) {
-			contaDestino.deposita(valorTransferencia);
-			return true;
-		}
-		return false;
+	public void trasnferePara(Conta contaDestino, double valorTransferencia) {
+		this.saca(valorTransferencia);
+		contaDestino.deposita(valorTransferencia);
+	}
+
+	public void transfere(double valor, Conta conta) {
+		this.saca(valor);
+		conta.deposita(valor);
 	}
 
 	public double mostraSaldo() {
 		return this.saldo;
+	}
+
+	public abstract String getTipo();
+
+	public String recuperaDadosParaImpressao() {
+		String dados = "Titular: " + this.titular;
+		dados += "\nNúmero: " + this.numero;
+		dados += "\nAgência: " + this.agencia;
+		dados += "\nSaldo: R$" + this.saldo;
+		return dados;
 	}
 
 	public String getNumeroAgencia() {
